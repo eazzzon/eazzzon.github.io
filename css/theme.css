@@ -488,3 +488,9 @@ section {
 	margin-left: -0.36em;
 	margin-right: -0.15em;
   }
+  .hanging_indent {
+    padding-left: 64px;
+    text-indent: -36px;
+	font-size: medium;
+	margin-bottom: 2px;
+}
