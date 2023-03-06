@@ -491,6 +491,6 @@ section {
   .hanging_indent {
     padding-left: 64px;
     text-indent: -36px;
-	font-size: medium;
-	margin-bottom: 2px;
+	font-size: 15px;
+	margin-bottom: 5px;
 }
