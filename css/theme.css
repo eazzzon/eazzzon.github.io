@@ -490,7 +490,7 @@ section {
   }
   .hanging_indent {
     padding-left: 64px;
-    text-indent: -36px;
+    text-indent: -16px;
 	font-size: 15px;
 	margin-bottom: 5px;
 }
