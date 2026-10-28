@@ -22,7 +22,7 @@
 
     <!-- Custom CSS -->
 
-    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/theme.css?v=20261027" rel="stylesheet">
 
     <!-- Font Awesome -->
 
@@ -33,6 +33,255 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<style>
+
+/* ==========================================
+
+   PUBLICATION PAGE LAYOUT
+
+   ========================================== */
+
+/* White page background */
+
+body {
+
+    background-color: #fafafa;
+
+    color: #333333;
+
+}
+
+/* Navigation */
+
+.navbar-custom,
+
+.navbar-custom.top-nav-collapse {
+
+    background-color: #ffffff !important;
+
+    border-bottom: 1px solid #e5e5e5;
+
+}
+
+/* Navigation text */
+
+.navbar-custom .navbar-brand,
+
+.navbar-custom .nav > li > a,
+
+.navbar-custom.top-nav-collapse .navbar-brand,
+
+.navbar-custom.top-nav-collapse .nav > li > a {
+
+    color: #333333 !important;
+
+}
+
+/* Navigation hover */
+
+.navbar-custom .nav > li > a:hover {
+
+    color: #1ba39c !important;
+
+}
+
+/* Publication section */
+
+#publication {
+
+    padding-top: 110px;
+
+    padding-bottom: 70px;
+
+    background-color: #fafafa;
+
+}
+
+/* Main content width */
+
+#publication .container {
+
+    max-width: 1000px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+/* Page title */
+
+#publication h2 {
+
+    text-align: center;
+
+    font-family: Montserrat, Arial, sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin: 0 0 45px;
+
+    line-height: 1.3;
+
+}
+
+/* Section headings */
+
+#publication h3 {
+
+    font-family: Montserrat, Arial, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-top: 35px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #dddddd;
+
+}
+
+/* ==========================================
+
+   NUMBERED PUBLICATION LIST
+
+   ========================================== */
+
+#publication .publication-list {
+
+    list-style-type: decimal !important;
+
+    list-style-position: outside !important;
+
+    padding-left: 3.5em !important;
+
+    margin: 0 0 45px !important;
+
+    counter-reset: none !important;
+
+}
+
+#publication .publication-list li {
+
+    display: list-item !important;
+
+    font-family: "Open Sans", Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.8;
+
+    color: #333333;
+
+    text-align: left;
+
+    margin-bottom: 17px !important;
+
+    padding-left: 0.3em !important;
+
+    text-indent: 0 !important;
+
+}
+
+/* Remove custom numbering from original theme */
+
+#publication .publication-list li::before {
+
+    content: none !important;
+
+    display: none !important;
+
+}
+
+/* Publication numbers */
+
+#publication .publication-list li::marker {
+
+    color: #555555;
+
+    font-weight: 400;
+
+}
+
+/* Journal names */
+
+#publication .publication-list em {
+
+    font-style: italic;
+
+}
+
+/* Author names */
+
+#publication .publication-list strong {
+
+    font-weight: 700;
+
+}
+
+/* ==========================================
+
+   RESPONSIVE LAYOUT
+
+   ========================================== */
+
+@media (max-width: 767px) {
+
+    #publication {
+
+        padding-top: 95px;
+
+    }
+
+    #publication .container {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+    #publication h2 {
+
+        font-size: 25px;
+
+    }
+
+    #publication h3 {
+
+        font-size: 17px;
+
+    }
+
+    #publication .publication-list {
+
+        padding-left: 2.8em !important;
+
+    }
+
+    #publication .publication-list li {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        margin-bottom: 15px !important;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -89,25 +338,15 @@
 
     </nav>
 
-    <!-- Publications Section -->
+    <!-- Publications -->
 
     <section id="publication">
 
-        <div class="container publication-container">
+        <div class="container">
 
-            <h1 class="page-title">Publications</h1>
+            <h2>PUBLICATIONS</h2>
 
-            <!-- ================================ -->
-
-            <!-- Peer-Reviewed Publications       -->
-
-            <!-- ================================ -->
-
-            <h2 class="publication-heading">
-
-                Peer-Reviewed Publications
-
-            </h2>
+            <h3>PEER-REVIEWED PUBLICATIONS</h3>
 
             <ol class="publication-list" reversed start="20">
 
@@ -463,11 +702,7 @@
 
             <!-- ================================ -->
 
-            <h2 class="publication-heading">
-
-                Conference Abstracts
-
-            </h2>
+            <h3>CONFERENCE ABSTRACTS</h3>
 
             <ol class="publication-list" reversed start="12">
 
