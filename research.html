@@ -24,39 +24,54 @@
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-<div class="container">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-		<i class="fa fa-bars"></i>
-		</button>
-		<a class="navbar-brand page-scroll" href="index.html" style="color: #ffffff;">
-		Yishen Zhang </a>
-	</div>
-	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-				<ul class="nav navbar-nav" style="color: #ffffff;">
-					<li><a href="index.html">Home</a></li>
 
-						<li class="dropdown">
-							<a href="research.html" class="dropdown-toggle" data-toggle="dropdown">Research Highlights<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="earth.html">Earth</a></li>
-								<li><a href="moon.html">Moon</a></li>
-								<li><a href="mercury.html">Mercury</a></li>
-							</ul>
-						</li>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 
-						<li><a href="publication.html">Publication</a></li>
-						<li><a href="opensource.html">Tools</a></li>
-						<!-- <li><a href="blog.html">Blog</a></li> -->
-				</ul>
-			</div>
-	</div>
-	<!-- /.navbar-collapse -->
-</div>
-<!-- /.container -->
-</nav>
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button"
+
+                        class="navbar-toggle"
+
+                        data-toggle="collapse"
+
+                        data-target=".navbar-main-collapse"
+
+                        aria-label="Toggle navigation">
+
+                    <i class="fa fa-bars"></i>
+
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+
+                    Yishen Zhang
+
+                </a>
+
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+
+                <ul class="nav navbar-nav">
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="research.html">Research Highlights</a></li>
+
+                    <li><a href="publication.html">Publications</a></li>
+
+                    <li><a href="opensource.html">Tools</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
 
 
  <!-- Page Sample Section -->
@@ -448,13 +463,64 @@
 
 
 <!-- Footer -->
-<footer>
-<div class="container text-center">
-	<p class="credits">
-		last update: Feb 18, 2026
-	</p>
-</div>
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container text-center">
+        <p class="credits" id="last-updated">
+            Last updated: Loading...
+        </p>
+    </div>
 </footer>
+
+<!-- Automatically retrieve the latest GitHub commit date -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const username = "eazzzon";
+    const repo = "eazzzon.github.io";
+
+    const apiURL = `https://api.github.com/repos/${username}/${repo}/commits?per_page=1`;
+
+    fetch(apiURL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("GitHub API request failed");
+            }
+            return response.json();
+        })
+        .then(data => {
+
+            if (!Array.isArray(data) || data.length === 0) {
+                throw new Error("No commits found");
+            }
+
+            // Get the latest commit date
+            const commitDate = new Date(data[0].commit.committer.date);
+
+            // Format: October 27, 2026
+            const formattedDate = commitDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                timeZone: "UTC"
+            });
+
+            // Update footer
+            document.getElementById("last-updated").textContent =
+                "Last updated: " + formattedDate;
+
+        })
+        .catch(error => {
+
+            console.error("Unable to fetch GitHub commit date:", error);
+
+            document.getElementById("last-updated").textContent =
+                "Last updated: Date unavailable";
+
+        });
+
+});
+</script>
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->
